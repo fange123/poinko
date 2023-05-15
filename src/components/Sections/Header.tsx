@@ -3,6 +3,8 @@ import {Bars3BottomRightIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import Link from 'next/link';
 import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
+import logo from '../../images/pionko.png';
+import Image from 'next/image';
 
 import {SectionId} from '../../data/data';
 import {useNavObserver} from '../../hooks/useNavObserver';
@@ -12,7 +14,14 @@ export const headerID = 'headerNav';
 const Header: FC = memo(() => {
   const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
   const navSections = useMemo(
-    () => [SectionId.About, SectionId.Resume, SectionId.Portfolio, SectionId.Testimonials, SectionId.Contact],
+    () => [
+      SectionId.Hero,
+      SectionId.About,
+      SectionId.Resume,
+      SectionId.Portfolio,
+      SectionId.Testimonials,
+      SectionId.Contact,
+    ],
     [],
   );
 
@@ -33,12 +42,18 @@ const Header: FC = memo(() => {
 const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
   ({navSections, currentSection}) => {
     const baseClass =
-      '-m-1.5 p-1.5 rounded-md font-bold first-letter:uppercase hover:transition-colors hover:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 sm:hover:text-orange-500 text-neutral-100';
-    const activeClass = classNames(baseClass, 'text-orange-500');
-    const inactiveClass = classNames(baseClass, 'text-neutral-100');
+      '-m-1.5 p-1.5 rounded-md font-bold first-letter:uppercase hover:transition-colors hover:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 sm:hover:text-orange-500 text-[#393946]';
+    const activeClass = classNames(baseClass);
+    const inactiveClass = classNames(baseClass);
     return (
-      <header className="fixed top-0 z-50 hidden w-full bg-neutral-900/50 p-4 backdrop-blur sm:block" id={headerID}>
-        <nav className="flex justify-center gap-x-8">
+      <header className="fixed top-0 z-50 hidden w-full bg-white p-4 backdrop-blur sm:block" id={headerID}>
+        <nav className="flex items-center justify-center gap-x-8">
+          <h1 className="mr-4 inline-block">
+            <Link href="#home" className="flex items-center">
+              <Image alt="" src={logo} className="w-12" />
+              <h3 className="ml-2 text-xl font-bold">Poinko</h3>
+            </Link>
+          </h1>
           {navSections.map(section => (
             <NavItem
               activeClass={activeClass}
@@ -68,13 +83,32 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
     const inactiveClass = classNames(baseClass, 'text-neutral-200 font-medium');
     return (
       <>
-        <button
-          aria-label="Menu Button"
-          className="fixed right-2 top-2 z-40 rounded-md bg-orange-500 p-2 ring-offset-gray-800/60 hover:bg-orange-400 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 sm:hidden"
-          onClick={toggleOpen}>
-          <Bars3BottomRightIcon className="h-8 w-8 text-white" />
-          <span className="sr-only">Open sidebar</span>
-        </button>
+        <div className="fixed  z-40 flex w-full items-center justify-between bg-white px-2 pt-2">
+          <h1 className="mr-4 inline-block">
+            <Link href="#home">
+              <Image alt="" src={logo} className="w-7" />
+              <h3 className="font-bold">Poinko</h3>
+            </Link>
+          </h1>
+          <button
+            type="button"
+            className="mb-2 mr-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-3 py-3 text-center text-sm font-medium text-white hover:bg-gradient-to-l focus:outline-none focus:ring-4 focus:ring-purple-200 dark:focus:ring-purple-800">
+            Buy Now
+          </button>
+          <button
+            type="button"
+            className="mb-2 mr-2 rounded-lg bg-gradient-to-br from-pink-500 to-orange-400 px-3 py-3 text-center text-sm font-medium text-white hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-pink-200 dark:focus:ring-pink-800">
+            Connect Wallet
+          </button>
+          <button
+            aria-label="Menu Button"
+            className=" right-2 mb-2 mr-2 rounded-md bg-orange-500 p-1 ring-offset-gray-800/60 hover:bg-orange-400 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 sm:hidden"
+            onClick={toggleOpen}>
+            <Bars3BottomRightIcon className="h-8 w-8 text-white" />
+            <span className="sr-only">Open sidebar</span>
+          </button>
+        </div>
+
         <Transition.Root as={Fragment} show={isOpen}>
           <Dialog as="div" className="fixed inset-0 z-40 flex sm:hidden" onClose={toggleOpen}>
             <Transition.Child

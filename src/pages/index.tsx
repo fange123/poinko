@@ -2,14 +2,10 @@ import dynamic from 'next/dynamic';
 import {FC, memo} from 'react';
 
 import Page from '../components/Layout/Page';
-import About from '../components/Sections/About';
-import Contact from '../components/Sections/Contact';
-import Footer from '../components/Sections/Footer';
 import Hero from '../components/Sections/Hero';
-import Portfolio from '../components/Sections/Portfolio';
-import Resume from '../components/Sections/Resume';
-import Testimonials from '../components/Sections/Testimonials';
 import {homePageMeta} from '../data/data';
+import bg from '../images/bg.png';
+import Image from 'next/image';
 
 // eslint-disable-next-line react-memo/require-memo
 const Header = dynamic(() => import('../components/Sections/Header'), {ssr: false});
@@ -21,13 +17,13 @@ const Home: FC = memo(() => {
     <Page description={description} title={title}>
       {/* @ts-ignore */}
       <Header />
-      <Hero />
-      <About />
-      <Resume />
-      <Portfolio />
-      <Testimonials />
-      <Contact />
-      <Footer />
+      <div className="fixed h-full w-full overflow-y-auto bg-white">
+        <Image alt="bg" className="fixed z-0 h-full w-full bg-cover bg-bottom bg-no-repeat" priority src={bg} />
+        <Hero />
+        <Hero />
+        <Hero />
+        <Hero />
+      </div>
     </Page>
   );
 });

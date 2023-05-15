@@ -3,7 +3,7 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,css,scss}'],
   // darkMode: 'media', // or 'media' or 'class'
   theme: {
-     extend: {
+    extend: {
       backgroundColor: theme => ({
         ...theme('colors'),
       }),
@@ -16,9 +16,11 @@ module.exports = {
       },
       height: {
         120: '30rem',
+        1000: '300rem',
       },
       width: {
         120: '30rem',
+        '9/20': '45%',
       },
       container: {
         padding: {
