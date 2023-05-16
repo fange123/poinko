@@ -14,14 +14,7 @@ export const headerID = 'headerNav';
 const Header: FC = memo(() => {
   const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
   const navSections = useMemo(
-    () => [
-      SectionId.Hero,
-      SectionId.About,
-      SectionId.Resume,
-      SectionId.Portfolio,
-      SectionId.Testimonials,
-      SectionId.Contact,
-    ],
+    () => [SectionId.Hero, SectionId.About, SectionId.Buy, SectionId.Token, SectionId.RoadMap, SectionId.Contact],
     [],
   );
 
@@ -63,6 +56,16 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
               section={section}
             />
           ))}
+          <button
+            type="button"
+            className="mb-2 ml-10 mr-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-3 py-3 text-center text-sm font-medium text-white hover:bg-gradient-to-l focus:outline-none focus:ring-4 focus:ring-purple-200 dark:focus:ring-purple-800 lg:px-7">
+            Buy Now
+          </button>
+          <button
+            type="button"
+            className="mb-2 mr-2 rounded-lg bg-gradient-to-br from-pink-500 to-orange-400 px-3 py-3 text-center text-sm font-medium text-white hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-pink-200 dark:focus:ring-pink-800">
+            Connect Wallet
+          </button>
         </nav>
       </header>
     );

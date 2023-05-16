@@ -13,7 +13,6 @@ import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 import TwitterIcon from '../components/Icon/TwitterIcon';
-import heroImage from '../images/header-background.webp';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
 import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
@@ -54,6 +53,9 @@ export const homePageMeta: HomepageMeta = {
 export const SectionId = {
   Hero: 'home',
   About: 'about',
+  Buy: 'buy',
+  Token: 'token',
+  RoadMap: 'roadmap',
   Contact: 'contact',
   Portfolio: 'portfolio',
   Resume: 'resume',
@@ -68,7 +70,7 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  * Hero section
  */
 export const heroData: Hero = {
-  imageSrc: heroImage,
+  imageSrc: '',
   name: `I'm Tim Baker.`,
   description: (
     <>

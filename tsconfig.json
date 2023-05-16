@@ -24,7 +24,7 @@
   },
   "include": [
     "./src/**/*"
-  ],
+, "src/components/Sections/.tsx"  ],
   "exclude": [
     "node_modules"
   ]
