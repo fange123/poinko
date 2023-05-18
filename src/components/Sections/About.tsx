@@ -43,7 +43,7 @@ const About: FC = memo(() => {
               claiming process within this timeframe. Any unclaimed Poinko tokens after the claiming period will be
               permanently removed from circulation.
             </p>
-            <div className="relative mt-20">
+            <div className="relative m-auto mt-20 lg:w-1/2">
               <div className="absolute -top-8 flex w-full justify-between">
                 <span className="text-white">Received</span>
                 <span className="text-white">1,000,000,000</span>
