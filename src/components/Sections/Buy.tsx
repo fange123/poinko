@@ -58,7 +58,7 @@ const Buy: FC = memo(() => {
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Go to Uniswap</h5>
             <p className="mb-3 text-xl font-normal italic leading-8 text-[#fffffe] dark:text-gray-400">
               Connect to Uniswap. Go to app.uniswap.org in google chrome or on the browser inside your Metamask app.
-              Connect your wallet. Paste the $LADYS token address into Uniswap, select Poinko, and confirm. When
+              Connect your wallet. Paste the $Poinko token address into Uniswap, select Poinko, and confirm. When
               Metamask prompts you for a wallet signature, sign.
             </p>
           </div>

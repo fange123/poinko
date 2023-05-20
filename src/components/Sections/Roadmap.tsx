@@ -1,6 +1,8 @@
 import {FC, memo} from 'react';
 import {SectionId} from '../../data/data';
 import Section from '../Layout/Section';
+import bee from '../../images/bee.png';
+import Image from 'next/image';
 
 const RoadMap: FC = memo(() => {
   return (
@@ -9,6 +11,9 @@ const RoadMap: FC = memo(() => {
       <h4 className="text-center text-2xl italic text-[#242427] lg:mb-20">
         Our story has just begun, and you are welcome to join us.
       </h4>
+      <div className="m-auto w-1/2">
+        <Image alt="" src={bee} className="lg:w-120" />
+      </div>
       <div className="flex justify-center">
         <ol className="items-center sm:flex ">
           <li className="relative mb-6 mr-3 sm:mb-0">
@@ -16,7 +21,7 @@ const RoadMap: FC = memo(() => {
               <div className="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#FFDF2C] ring-0 ring-white dark:ring-gray-900 sm:ring-8"></div>
               <div className="hidden h-0.5 w-full bg-gray-200 dark:bg-gray-700 sm:flex"></div>
             </div>
-            <div className="mt-5 rounded-md bg-white p-3 shadow-lg sm:pr-8">
+            <div className="mt-5 rounded-md border-2 border-yellow-500 bg-white/10 p-3 shadow-lg sm:pr-8 ">
               <h3 className="text-center text-xl font-semibold leading-10 text-gray-900">Phase 1</h3>
               <h4 className="text-center text-lg leading-7 text-gray-900"> Foundation and Launch </h4>
               <time className="my-2 block text-center text-base font-normal leading-none text-gray-900">(Q3 2023)</time>
@@ -30,7 +35,7 @@ const RoadMap: FC = memo(() => {
               <div className="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#FFDF2C] ring-0 ring-white dark:ring-gray-900 sm:ring-8"></div>
               <div className="hidden h-0.5 w-full bg-gray-200 dark:bg-gray-700 sm:flex"></div>
             </div>
-            <div className="mt-5 rounded-md bg-white p-3 shadow-lg sm:pr-8">
+            <div className="mt-5 rounded-md border-2 border-yellow-500 bg-white/10 p-3 shadow-lg sm:pr-8">
               <h3 className="text-center text-xl font-semibold  leading-10 text-gray-900">Phase 2</h3>
               <h4 className="text-center text-lg leading-7 text-gray-900"> Platform Expansion</h4>
               <time className="my-2 block text-center text-base font-normal leading-none text-gray-900">
@@ -46,7 +51,7 @@ const RoadMap: FC = memo(() => {
               <div className="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full  bg-[#FFDF2C] ring-0 ring-white dark:ring-gray-900 sm:ring-8"></div>
               <div className="hidden h-0.5 w-full bg-gray-200 dark:bg-gray-700 sm:flex"></div>
             </div>
-            <div className="mt-5 rounded-md bg-white p-3 shadow-lg sm:pr-8">
+            <div className="mt-5 rounded-md border-2 border-yellow-500 bg-white/10 p-3 shadow-lg sm:pr-8">
               <h3 className="text-center text-xl font-semibold leading-10 text-gray-900">Phase 3</h3>
               <h4 className="text-center text-lg leading-7 text-gray-900">Ecosystem Growth</h4>
               <time className="my-2 block text-center text-base font-normal leading-none text-gray-900">
@@ -62,7 +67,7 @@ const RoadMap: FC = memo(() => {
               <div className="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full  bg-[#FFDF2C] ring-0 ring-white dark:ring-gray-900 sm:ring-8"></div>
               <div className="hidden h-0.5 w-full bg-gray-200 dark:bg-gray-700 sm:flex"></div>
             </div>
-            <div className="mt-5 rounded-md bg-white p-3 shadow-lg sm:pr-8">
+            <div className="mt-5 rounded-md border-2 border-yellow-500 bg-white/10 p-3 shadow-lg sm:pr-8">
               <h3 className="text-center text-xl font-semibold leading-10 text-gray-900">Phase 4</h3>
               <h4 className="text-center text-lg leading-7 text-gray-900"> Expansion and Adoption</h4>
               <time className="text-basefont-normal my-2 block text-center leading-none text-gray-900">
@@ -71,7 +76,6 @@ const RoadMap: FC = memo(() => {
               <p className="text-base font-normal italic leading-9 text-gray-900"> - Global Expansion</p>
               <p className="text-base font-normal italic leading-9 text-gray-900"> - Cross-chain Compatibility</p>
               <p className="text-base font-normal italic leading-9 text-gray-900">
-                {' '}
                 - Integration with External Platforms
               </p>
             </div>

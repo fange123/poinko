@@ -9,7 +9,7 @@ const About: FC = memo(() => {
   return (
     <Section sectionId={SectionId.About} className="relative px-5">
       <h1 className="text-center text-3xl font-bold text-[#242427]">ABOUT</h1>
-      <div className="mt-20 rounded-xl border-4 border-dashed border-white p-2 shadow-inner lg:flex lg:flex-row-reverse lg:items-center">
+      <div className="mt-20 rounded-xl bg-white/10 p-2 px-5 shadow-xl lg:flex lg:flex-row-reverse lg:items-center">
         <div className="lg:flex-1">
           <p className="mb-5 break-words text-center font-serif text-xl italic leading-8 text-[#333337] lg:mb-8">
             As a self-organizing memory coin, Poinko represents individual memories and emotional experiences. It serves
